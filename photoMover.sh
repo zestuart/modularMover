@@ -6,7 +6,8 @@ vol="2TB"
 
 topLevel="/Volumes/$vol/$year"
 fullPath="$topLevel/$today"
-source="/Volumes/Untitled/DCIM/100MEDIA/"
+microSD="Untitled"
+source="/Volumes/$microSD/DCIM/100MEDIA/"
 
 fileTypes=$(ls $source | awk -F'[.]' '{print $2}' | sort | uniq)
 
@@ -54,3 +55,4 @@ do
 	fi
 done
 
+diskutil unmount /Volumes/$microSD
